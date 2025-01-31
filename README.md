@@ -36,7 +36,6 @@ Before you start, ensure that the following are installed on your system:
 
 ---
 
-Let me know if you'd like any further modifications!
 ### **Setting Up XAMPP** 🔧
 
 1. **Download & Install XAMPP**  
