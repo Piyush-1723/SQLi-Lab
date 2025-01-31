@@ -14,10 +14,6 @@ Before you start, ensure that the following are installed on your system:
 
 ---
 
-Here’s how you can add that section to your README:
-
----
-
 ### Downloading and Setting Up the Project
 
 1. **Download the Project ZIP File**  
