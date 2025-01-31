@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLi Lab - Search Employees</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Search Employees</h1>
+        <form id="searchForm">
+            <input type="text" id="searchInput" name="search" placeholder="Enter employee details" required>
+            <button type="button" id="searchButton">Search</button>
+            <button type="reset" onclick="resetPage()">Reset</button>
+            <button type="button" id="exampleButton">Example</button>
+        </form>
+        <div class="table-container" id="results"></div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <a href="https://github.com/Piyush-1723" target="_blank">
+                <img src="images/github_logo.png" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/piyush-singh1723/" target="_blank">
+                <img src="images/linkedin_logo.png" class="social-icon">
+            </a>
+        </div>
+    </footer>
+    <script>
+        // Attach event listener to the search button
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const searchInput = document.getElementById('searchInput').value;
+
+            // Perform AJAX request
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'employee_search_results.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                const resultsContainer = document.getElementById('results');
+                if (xhr.status === 200) {
+                    resultsContainer.innerHTML = xhr.responseText;
+                } else {
+                    resultsContainer.innerHTML = '<div class="no-results">Error fetching results.</div>';
+                }
+            };
+            xhr.send('search=' + encodeURIComponent(searchInput));
+        });
+
+        // Listen for the Enter key press to trigger the search
+        document.getElementById('searchInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent the form from submitting
+                document.getElementById('searchButton').click(); // Trigger the search button click
+            } //made by https://github.com/Piyush-1723 | https://www.linkedin.com/in/piyush-singh1723/
+        });
+
+        // Trigger the search with the example value "Georgi"
+        document.getElementById('exampleButton').addEventListener('click', function() {
+            document.getElementById('searchInput').value = 'Georgi'; // Set "Georgi" as the value
+            document.getElementById('searchButton').click(); // Trigger the search button click
+        });
+
+        // Reset the page
+        function resetPage() {
+            document.getElementById('results').innerHTML = '';
+            document.getElementById('searchInput').value = ''; // Clear the search bar
+        }
+    </script>
+</body>
+</html>
