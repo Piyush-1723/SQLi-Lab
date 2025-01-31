@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SQLi Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create an Account</h2>
+        <form action="signup.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="hidden" name="role" value="guest">
+        
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <a href="https://github.com/Piyush-1723" target="_blank">
+                <img src="images/github_logo.png" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/piyush-singh1723/" target="_blank">
+                <img src="images/linkedin_logo.png" class="social-icon">
+            </a>
+        </div>
+    </footer>
+    
+
+</body>
+</html>
