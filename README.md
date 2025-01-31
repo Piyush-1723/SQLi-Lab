@@ -14,6 +14,33 @@ Before you start, ensure that the following are installed on your system:
 
 ---
 
+Here’s how you can add that section to your README:
+
+---
+
+### Downloading and Setting Up the Project
+
+1. **Download the Project ZIP File**  
+   Go to the [GitHub repository](https://github.com/Piyush-1723/SQLi-Lab) and click the "Code" button. Select **Download ZIP** to download the project files to your local system.
+
+2. **Extract the ZIP File**  
+   After downloading, extract the contents of the ZIP file to a folder on your system.
+
+3. **Rename the Extracted Folder**  
+   Rename the extracted folder to `SQLi Lab` (or any name you prefer). Ensure that the folder now contains the following subfolders:
+   - **Login** (containing `login.html`, `login.php`, etc.)
+   - **Database** (containing the database `.sql.zip` file)
+   - **Search** (containing the search-related files)
+
+4. **Move to XAMPP's `htdocs`**  
+   Place the `SQLi Lab` folder into the `htdocs` directory of your XAMPP installation (typically located at `C:\xampp\htdocs\`).
+
+5. **Continue with Setup**  
+   Follow the steps in the Setting Up XAMPP and Setting Up the Database sections to complete the installation.
+
+---
+
+Let me know if you'd like any further modifications!
 ### **Setting Up XAMPP** 🔧
 
 1. **Download & Install XAMPP**  
